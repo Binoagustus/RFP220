@@ -1,26 +1,22 @@
 package com.daySixProjects;
 
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class StopWatch {
-	
+
 	public void time() {
-		Scanner sc=new Scanner(System.in);
-		long start,end;
-		double time;
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Type any character to start the stopwatch");
-		char star = sc.next().charAt(0);
-		
-		start = System.currentTimeMillis();
-		
+		char start = sc.next().charAt(0);
+		LocalTime obj1 = LocalTime.now();
 		System.out.println("Type any character to stop the stopwatch");
 		char stop = sc.next().charAt(0);
-		
-		end = System.currentTimeMillis();
-		
-		time = (end - start) / 1000.0;
-		double hours = (time / 3600) / 1000.0;
-		System.out.println("Elapsed time is hours "+hours+" seconds "+time);
+		LocalTime obj2 = LocalTime.now();
+		System.out.print("Hours " + obj1.until(obj2, ChronoUnit.HOURS) + " ");
+		System.out.print("Minutes " + obj1.until(obj2, ChronoUnit.MINUTES) + " ");
+		System.out.print("Seconds " + obj1.until(obj2, ChronoUnit.SECONDS) + " ");
 		sc.close();
 	}
 
