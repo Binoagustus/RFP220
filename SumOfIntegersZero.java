@@ -27,6 +27,7 @@ public class SumOfIntegersZero {
 	
 	public static void main(String[] args) {
 		SumOfIntegersZero sz = new SumOfIntegersZero();
+		System.out.println("Enter array values ");
 		sz.findTriplets();
 	}
 
